@@ -1,0 +1,58 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Список задач</h1>
+    </header>
+
+    <div class="filter-form">
+        <form method="get">
+            <select name="status" onchange="this.form.submit()">
+                <option value="" {% if not request.GET.status %}selected{% endif %}>Все</option>
+                <option value="planned" {% if request.GET.status == 'planned' %}selected{% endif %}>Направлена в работу</option>
+                <option value="in_progress" {% if request.GET.status == 'in_progress' %}selected{% endif %}>В работе</option>
+                <option value="completed" {% if request.GET.status == 'completed' %}selected{% endif %}>Выполнена</option>
+            </select>
+        </form>
+    </div>
+
+    <ul class="task-list">
+    {% for task in tasks %}
+        <li class="task-item">
+            <div class="task-info">
+                <a href="{% url 'task_detail' task.pk %}" class="task-title">{{ task.title }}</a>
+                <p class="task-status">
+                    {{ task.get_status_display }}
+                    {% if task.planned_date and task.status != 'completed' %}
+                        до {{ task.planned_date|date:"d.m.Y" }}
+                    {% else %}
+
+                    {% endif %}
+                </p>
+            </div>
+            <div class="task-actions">
+                <a href="{% url 'task_edit' task.pk %}" class="edit-btn">Редактировать</a>
+                <a href="{% url 'task_delete' task.pk %}" class="delete-btn">Удалить</a>
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+
+    <div class="add-task">
+        <a href="{% url 'task_create' %}" class="add-task-btn">Добавить задачу</a>
+    </div>
+</div>
+
+</body>
+</html>

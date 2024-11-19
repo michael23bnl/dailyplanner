@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали задачи - {{ task.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>{{ task.title }}</h1>
+    </header>
+
+    <div class="task-details">
+        <p><strong>Описание:</strong> {{ task.description }}</p>
+        <p><strong>Статус:</strong> {{ task.get_status_display }}</p>
+        <p><strong>Дата планирования:</strong> {{ task.planned_date }}</p> <!-- Добавление даты планирования -->
+    </div>
+
+    <div class="task-actions">
+        <a href="{% url 'task_list' %}" class="back-btn">Назад к списку</a>
+    </div>
+</div>
+
+</body>
+</html>

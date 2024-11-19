@@ -1,0 +1,267 @@
+
+/* Основные стили для всего сайта */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #5c6bc0;
+}
+
+.filter-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fafafa;
+    border: 1px solid #eee;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: #e8eaf6;
+}
+
+.task-info {
+    max-width: 70%;
+}
+
+.task-title {
+    font-size: 1.2rem;
+    color: #5c6bc0;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.task-title:hover {
+    text-decoration: underline;
+}
+
+.task-status {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #8d8d8d;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn, .delete-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.edit-btn {
+    background-color: #4caf50;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+.add-task {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-task-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3f51b5;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-task-btn:hover {
+    background-color: #303f9f;
+}
+
+/* создание/редактирование задач */
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.form-container p {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="number"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.submit-btn, .cancel-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 20px;
+    display: inline-block;
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #4caf50;
+}
+
+.cancel-btn {
+    background-color: #f44336;
+    margin-left: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+.cancel-btn:hover {
+    background-color: #d32f2f;
+}
+
+label {
+    font-size: 1rem;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* детальное описание задачи */
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.task-details p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.task-details strong {
+    font-weight: bold;
+    color: #333;
+}
+
+.task-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.back-btn:hover {
+    background-color: #45a049;
+}
+
+input[type="date"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+

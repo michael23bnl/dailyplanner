@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if form.instance.pk %}Редактировать задачу{% else %}Создать задачу{% endif %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>{% if form.instance.pk %}Редактировать задачу{% else %}Создать задачу{% endif %}</h1>
+    </header>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-container">
+            {{ form.as_p }}
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="submit-btn">Сохранить</button>
+            <a href="{% url 'task_list' %}" class="cancel-btn">Отмена</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
